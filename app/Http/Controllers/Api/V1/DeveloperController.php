@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Developer;
 use App\Http\Requests\DeveloperRequest;
 use App\Http\Resources\V1\DeveloperCollection;
+use Illuminate\Http\Request;
 
 class DeveloperController extends Controller
 {
@@ -34,6 +35,7 @@ class DeveloperController extends Controller
      */
     public function store(DeveloperRequest $request)
     {
+        
         $developer = $this->developer->create($request->all());
 
         return response()->json($developer, 201);

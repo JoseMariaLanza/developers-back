@@ -25,7 +25,10 @@ class DeveloperFactory extends Factory
             'name' => $this->faker->name(),
             'profession' => 'profession' . $this->faker->name(),
             'position' => 'position' . $this->faker->name(),
-            'technology' => 'technology' . $this->faker->name()
+            'technology' => 'technology' . $this->faker->name(),
+           // 'library' => 'library' . $this->faker->name()
+            
+
         ];
     }
 }
