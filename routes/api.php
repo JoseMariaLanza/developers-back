@@ -2,7 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Api\V1\DeveloperController;
+use App\Http\Controllers\Api\V1\DeveloperController as APIv1;
+use App\Http\Controllers\Api\V2\DeveloperController as APIv2;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +16,5 @@ use App\Http\Controllers\Api\V1\DeveloperController;
 |
 */
 
-Route::apiResource('v1/developers', DeveloperController::class);
+Route::apiResource('v1/developers', APIv1::class);
+Route::apiResource('v2/developers', APIv2::class);

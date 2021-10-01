@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1;
+namespace App\Http\Controllers\Api\V2;
 
 use App\Http\Controllers\Controller;
 use App\Models\Developer;
 use App\Http\Requests\DeveloperRequest;
-use App\Http\Resources\V1\DeveloperCollection;
+use App\Http\Resources\V2\DeveloperCollection;
 
 class DeveloperController extends Controller
 {
@@ -29,52 +29,45 @@ class DeveloperController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\DeveloperRequest  $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(DeveloperRequest $request)
+    public function store(Request $request)
     {
-        $developer = $this->developer->create($request->all());
-
-        return response()->json($developer, 201);
-        // return response($request->all());
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Developer  $developer
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Developer $developer)
+    public function show($id)
     {
-        return response()->json($developer);
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Developer  $developer
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(DeveloperRequest $request, Developer $developer)
+    public function update(Request $request, $id)
     {
-        $developer->update($request->all());
-
-        return response()->json($developer);
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Developer  $developer
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Developer $developer)
+    public function destroy($id)
     {
-        $developer->delete();
-
-        return response()->json(null, 204);
+        //
     }
 }
