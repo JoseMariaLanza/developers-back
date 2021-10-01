@@ -22,12 +22,12 @@ class DeveloperRequest extends FormRequest
      * @return array
      */
     public function rules()
-    {
+    {    
         return [
-            'name'          => 'required',
-            'profession'    => 'required',
-            'position'      => 'required',
-            'technology'    => 'required',
-        ];
+            'name'          => 'required|regex:/^[\pL\s\-]+$/u|max:255',
+            'profession'    => 'required|regex:/^[\pL\s\-]+$/u|max:255',
+            'position'      => 'required|regex:/^[\pL\s\-]+$/u|max:255',
+            'technology'    => 'required|regex:/^[\pL\s\-]+$/u|max:255',
+        ]; 
     }
 }

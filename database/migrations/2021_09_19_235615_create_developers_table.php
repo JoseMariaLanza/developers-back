@@ -15,11 +15,11 @@ class CreateDevelopersTable extends Migration
     {
         Schema::create('developers', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->unique();
-            $table->string('slug')->unique();
-            $table->string('profession');
-            $table->string('position');
-            $table->string('technology');
+            $table->string('name')->required();
+            $table->string('slug')->unique()->required();
+            $table->string('profession')->required();
+            $table->string('position')->required();
+            $table->string('technology')->required();
             $table->timestamps();
         });
     }
