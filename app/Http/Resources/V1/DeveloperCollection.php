@@ -18,7 +18,8 @@ class DeveloperCollection extends ResourceCollection
             'data' => $this->collection,
             'meta' => [
                 'authors' => [
-                    'José María Lanza'
+                    'José María Lanza',
+                    'Gabriel Vega'
                 ]
             ]
         ];

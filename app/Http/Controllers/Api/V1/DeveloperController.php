@@ -102,18 +102,21 @@ class DeveloperController extends Controller
         return response()->json($developer);
     }   */
     
-   public function update(Request $request, Developer $developer)
+   public function update(Request $request, $id)
 
    
     {
-     //  $developer= Developer::find($developer);
+      //$developer = Developer::where('developers',$developer)->first();
+
+      $developer= Developer::find($id);
 
       if (!$developer) {
+                
         return response([
             'success' => false,
             'message' => 'No se encontro Desarrollador'
         ], 200);
-    }
+        }
       
 
       $data = $request->all();
@@ -135,10 +138,7 @@ class DeveloperController extends Controller
             } 
             //$developer->update($data);
 
-
             //$developer = Developer::update($data);
-
-
 
             // $developer = Developer::where('id',$id)->update($data);
 
